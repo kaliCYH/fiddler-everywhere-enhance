@@ -1,17 +1,51 @@
-# Get Latest Version
+# 文件使用方法
 
-## Linux
+## 下载对应版本
+
+修改对应版本直链
+
+4.1.2
+
+```
+https://downloads.getfiddler.com/win/Fiddler%20Everywhere%204.1.2.exe
+```
+
+4.5.0
+
+```
+https://downloads.getfiddler.com/win/Fiddler%20Everywhere%204.5.0.exe
+```
+
+## 安装并替换文件
+
+安装后会自动打开直接退出，然后替换文件后再打开
+
+## 禁用更新
+
+修改 `%userprofile%\.fiddler\Settings\electron-settings.json`，搜索 `autoUpdateSettings` 新增
+```json
+"autoUpdateSettings": {
+    "downloadedUpdateVersion": "0.0.0",
+    "disabled":true
+}
+```
+
+# 破解制作教程
+
+## 获取最新版本
+
+## Linux 平台
 api(dot)getfiddler(dot)com/linux/latest-linux
 
-## Mac
+## Mac 平台
 api(dot)getfiddler(dot)com/mac/latest-mac
 
-## Windows
+## Windows 平台
 api(dot)getfiddler(dot)com/win/latest
 
 ## NOTICE
 
-If you are using windows, just try https://github.com/dnSpyEx/dnSpy
+如果你用的是Windows，请你使用 https://github.com/dnSpyEx/dnSpy
 ## get ilasm (ildasm)
 
 1. dotnet new console -n test
@@ -45,16 +79,6 @@ public AccountDTO GetBestAccount(UserWithBestAccountDTO user)
 		return user.Accounts.FirstOrDefault((UserAccountDTO x) => x.Id == user.BestEverywhereAccountId.Value);
 	}
 	return user.Accounts.FirstOrDefault();
-}
-```
-
-## 禁用更新
-
-修改 `%userprofile%\.fiddler\Settings\electron-settings.json`，搜索 `autoUpdateSettings` 新增
-```json
-"autoUpdateSettings": {
-    "downloadedUpdateVersion": "0.0.0",
-    "disabled":true
 }
 ```
 
